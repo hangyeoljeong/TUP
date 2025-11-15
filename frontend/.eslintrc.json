@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",              // ✅ CRLF/LF 자동 감지
+        "semi": true,                     // ✅ 세미콜론 항상 붙이기
+        "singleQuote": true,              // ✅ 홑따옴표 사용
+        "tabWidth": 2,                    // ✅ 탭 2칸
+        "trailingComma": "es5",           // ✅ 마지막 쉼표 허용
+        "printWidth": 100                 // ✅ 한 줄 최대 길이
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "warn",
+    "react/jsx-no-comment-textnodes": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": "off",
+    "import/prefer-default-export": "off",
+    "linebreak-style": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

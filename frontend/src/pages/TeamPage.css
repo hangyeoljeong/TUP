@@ -1,0 +1,145 @@
+.team-page-container {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ 전체 중앙 정렬 */
+}
+
+/* 상단 헤더 */
+.team-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.team-header h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.team-header p {
+  color: #555;
+  margin-top: 0.4rem;
+}
+
+/* 섹션 박스 */
+.team-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 95%;
+  max-width: 900px; /* ✅ 폭 제한 */
+}
+
+/* 섹션 타이틀 */
+.team-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* 팀원 카드 리스트 */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 팀원 카드 */
+.member-card {
+  width: 100%;
+  max-width: 100%;
+  background: #fffaf7;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-size: 0.92rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 팀원 이름 */
+.member-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.8rem;
+}
+
+/* 카드 내 정보 */
+.member-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.25rem 0;
+  line-height: 1.5;
+}
+
+/* 섹션 내 텍스트 */
+.team-section p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 📅 일정관리 + 📒 게시판 2열 레이아웃 */
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* ✅ 좌우 여백 자동 조절 */
+  gap: 1.5rem;
+  width: 95%;
+  max-width: 900px;
+}
+
+/* 각 기능 박스 */
+.feature-box {
+  flex: 1 1 430px; /* ✅ 반응형 2열 (최소 430px) */
+  background: #fffaf7;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 이미지가 아래에 붙도록 */
+  min-height: 200px; /* 카드 높이 통일감 */
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.feature-image {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 1.2rem auto 0;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 💬 채팅방 (전체폭) */
+.chat-image-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 95%;
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
