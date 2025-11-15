@@ -1,0 +1,49 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: tup-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tup_db
+    volumes:
+      - ./backend/db/mysql_data:/var/lib/mysql
+      - ./backend/db/database_dump.sql:/docker-entrypoint-initdb.d/database_dump.sql
+    ports:
+      - "3306:3306"
+    healthcheck:  # ✅ MySQL 헬스체크 추가
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tup-backend
+    command: python backend/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app/backend
+    depends_on:    # ✅ MySQL이 healthy 되기 전까지 백엔드 실행 대기
+      mysql:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: tup-frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend

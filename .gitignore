@@ -1,0 +1,55 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# ---- Django ----
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+db/
+media/
+staticfiles/
+
+# Django migrations (only if you want to ignore initial db states)
+*/migrations/__pycache__/
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# ---- Environment ----
+.env
+venv/
+.env.local
+.env.*.local
+
+# ---- Docker ----
+*.pid
+*.seed
+*.pid.lock
+Dockerfile~
+docker-compose.override.yml
+.docker/
+.dockerignore
+
+# ---- Node / React ----
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.cache/
+frontend/dist/
+
+# ---- VSCode / IDE ----
+.vscode/
+.idea/
+*.swp
+
+# ---- System ----
+.DS_Store
+Thumbs.db
