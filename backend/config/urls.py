@@ -21,4 +21,7 @@ urlpatterns = [
     
     # ✅ TeamMatching1 관련 엔드포인트
     path("api/team-matching1/", include("TeamMatching1.urls")),
+
+    # ✅ TeamMatching2 관련 엔드포인트
+    path("api/team-matching2/", include("TeamMatching2.urls")),
 ]

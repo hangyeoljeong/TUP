@@ -7,8 +7,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: tup_db
     volumes:
-      - ./backend/db/mysql_data:/var/lib/mysql
-      - ./backend/db/database_dump.sql:/docker-entrypoint-initdb.d/database_dump.sql
+      - ./db/TUP_project.sql:/docker-entrypoint-initdb.d/TUP_project.sql
     ports:
       - "3306:3306"
     healthcheck:  # ✅ MySQL 헬스체크 추가
